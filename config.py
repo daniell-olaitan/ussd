@@ -1,17 +1,12 @@
 import os
-from functools import lru_cache
 
-
-class Settings:
-    secret_key: str = os.getenv("SECRET_KEY", "default-secret")
-    firebase_service_account_json: str = os.getenv("FIREBASE_SERVICE_ACCOUNT_JSON")
-    iotec_client_id: str = os.getenv("IOTEC_CLIENT_ID")
-    iotec_api_key: str = os.getenv("IOTEC_API_KEY")
-    iotec_base_url: str = os.getenv("IOTEC_BASE_URL")
-    at_ussd_shortcode: str = os.getenv("AT_USSD_SHORTCODE")
-    inquiry_number: str = os.getenv("INQUIRY_NUMBER")
-
-
-@lru_cache
-def get_settings() -> Settings:
-    return Settings()
+class Config:
+    IOTEC_AUTH_URL = "https://id.iotec.io/connect/token"
+    IOTEC_COLLECTION_URL = "https://pay.iotec.io/api/collections/collect"
+    IOTEC_STATUS_URL = "https://pay.iotec.io/api/collections/status"
+    SECRET_KEY = os.getenv("SECRET_KEY", "default-secret")
+    IOTEC_CLIENT_ID = os.getenv('IOTEC_CLIENT_ID')
+    IOTEC_CLIENT_SECRET = os.getenv('IOTEC_CLIENT_SECRET')
+    FIREBASE_SERVICE_ACCOUNT_B64 = os.getenv("FIREBASE_SERVICE_ACCOUNT_B64")
+    WALLET_ID = os.getenv('WALLET_ID')
+    INQUIRY_PHONE = "0200947464"
