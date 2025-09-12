@@ -270,7 +270,7 @@ class USSDHandler:
             elif user['status'] in ['pending', 'failed']:
                 return self.handle_incomplete_registration(phone_number, parts, user)
             elif user['status'] == 'registered':
-                return self.handle_registered_user_flow(phone_number, parts, user)
+                return self.handle_registered_user_flow(parts)
             else:
                 return self.create_response("END", "Service temporarily unavailable. Please try again later.")
 
@@ -398,7 +398,7 @@ class USSDHandler:
             return self.create_response("END",
                 "Invalid option. Session ended.")
 
-        if choice == 2:
+        if choice == "2":
             self.db.delete_user(phone)
             return self.create_response("END",
                 "Registration reset. Please redial the code to start fresh registration.")
