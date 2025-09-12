@@ -341,8 +341,8 @@ class USSDHandler:
 
         if decision == "2":
             # user declined terms -> end session politely
-            return self.create_response("END"
-                " You must accept the Privacy Policy to use Yofarm Hub B2B. Thank you.")
+            return self.create_response("END",
+                "You must accept the Privacy Policy to use Yofarm Hub B2B. Thank you.")
 
         if len(parts) == 5:
             packages_txt = "Choose membership:\n1. Yofarm Access - UGX 9,999\n"
