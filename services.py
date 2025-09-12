@@ -153,7 +153,7 @@ class PaymentService:
                 'currency': 'UGX',
                 'walletId': Config.WALLET_ID,
                 'externalId': external_id,
-                'payer': formatted_phone,
+                'payer': "0111777777",#formatted_phone,
                 'amount': amount,
                 'payerNote': payer_note,
                 'payeeNote': payee_note,
