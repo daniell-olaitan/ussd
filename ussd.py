@@ -30,14 +30,7 @@ def ussd_callback():
             else:
                 response = 'END End'
         else:
-            isalpha = False
-            for ch in text[2:]:
-                if not ch.isalpha:
-                    break
-            else:
-                isalpha = True
-
-            if isalpha:
+            if text[2:].isalpha():
                 response = f"CON District: {text[2:]}\n\n"
                 response += 'Proceeding to the next step…\n\n'
                 response += 'Would you like to:\n\n'
