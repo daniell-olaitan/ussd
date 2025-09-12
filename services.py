@@ -297,7 +297,8 @@ class USSDHandler:
 
         # first == "1" proceed to Step 2 (enter name)
         if len(parts) == 1:
-            return "CON Enter your full name:", False
+            return self.create_response("CON",
+                "Enter your full name:")
 
         # Step 2: name provided
         name = parts[1].strip()

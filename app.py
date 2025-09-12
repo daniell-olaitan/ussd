@@ -4,9 +4,8 @@ load_dotenv()
 import os
 import logging
 
-from flask import Flask, request, Response, jsonify
-from services import UserService, PaymentService, USSDHandler, User
-from firebase_admin import firestore
+from flask import Flask, request, jsonify
+from services import UserService, PaymentService, USSDHandler
 from db import db
 from config import Config
 
