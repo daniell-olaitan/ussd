@@ -359,7 +359,7 @@ class USSDHandler:
         # Ask for payment via Mobile Money
         if len(parts) == 6:
             return self.create_response("CON",
-                "You selected {chosen_pkg}.\nPay via Mobile Money?\n1. Yes\n2. Cancel")
+                f"You selected {package}.\nPay via Mobile Money?\n1. Yes\n2. Cancel")
 
         pay_choice = parts[6]
         if pay_choice not in ("1", "2"):
